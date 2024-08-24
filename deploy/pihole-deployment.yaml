@@ -18,9 +18,9 @@ spec:
         image: pihole/pihole:latest
         env:
         - name: TZ
-          value: "America/Chicago"
+          value: "America/Chicago" # Set your timezone
         - name: WEBPASSWORD
-          value: ""secret_removed""
+          value: ""secret_removed"" # Set your password
         ports:
         - containerPort: 80
         - containerPort: 53
