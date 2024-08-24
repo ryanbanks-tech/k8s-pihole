@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pihole
+  namespace: pihole
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pihole
+  template:
+    metadata:
+      labels:
+        app: pihole
+    spec:
+      containers:
+      - name: pihole
+        image: pihole/pihole:latest
+        env:
+        - name: TZ
+          value: "America/Chicago"
+        - name: WEBPASSWORD
+          value: ""secret_removed""
+        ports:
+        - containerPort: 80
+        - containerPort: 53
+        resources:
+          requests:
+            memory: "200Mi"
+            cpu: "100m"
+          limits:
+            memory: "500Mi"
+            cpu: "500m"
