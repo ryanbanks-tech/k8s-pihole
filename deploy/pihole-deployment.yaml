@@ -21,6 +21,12 @@ spec:
           value: "America/Chicago" # Set your timezone
         - name: WEBPASSWORD
           value: ""secret_removed"" # Set your password
+        - name: DNS1
+          value: "10.20.150.1" # Replace with your preferred primary DNS server
+        - name: DNS2
+          value: "10.20.110.1" # Replace with your preferred secondary DNS server
+        - name: DNSMASQ_LISTENING
+          value: "all" # Allow Pi-hole to accept queries from all origins
         ports:
         - containerPort: 80
         - containerPort: 53
